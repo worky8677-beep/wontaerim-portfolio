@@ -10,7 +10,7 @@
   --color-dove: #666666;
   --color-silver: #cccccc;
   --color-mine: #292929;
-  --color-shark: #333333;
+  --color-shark: #454545;
   --color-gallery: #a7a7a7;
   --color-alabaster: #f3f3f3;
   --color-snowflake: #f3f6ee;
@@ -20,6 +20,7 @@
   --color-cobalt: #2367b8;
   --color-charcoal: #444444;
   --color-olive: #777876;
+  --color-fern: #476813;
 
   /* 텍스트 크기 */
   --text-huge: 120px;

@@ -1,15 +1,4 @@
-const arrowUrl = "https://www.figma.com/api/mcp/asset/c638e3bc-7169-46ea-8d82-e915d11e7b34";
-
-function ProjectBtn({ label, href = "#" }) {
-  return (
-    <a href={href} className="flex items-center gap-1 font-gmarket font-bold text-h5 text-forest">
-      {label}
-      <span className="inline-block rotate-180 -scale-y-100 size-[33px]">
-        <img src={arrowUrl} alt="" className="size-full" />
-      </span>
-    </a>
-  );
-}
+import { ProjectButton } from "./ProjectButton";
 
 export function ProjectCard({ number, title, tags = [], duration, contribution, description, image, docsHref, linkLabel, linkHref }) {
   return (
@@ -36,7 +25,7 @@ export function ProjectCard({ number, title, tags = [], duration, contribution, 
             ))}
           </div>
           <div className="flex gap-[27px] font-gmarket font-normal text-sub">
-            <div className="flex flex-col gap-[10px] w-[6rem] shrink-0 text-dove">
+            <div className="flex flex-col gap-[2px] w-[6rem] shrink-0 text-dove">
              <span className="flex justify-between">
               <span>제</span>
               <span>작</span>
@@ -48,7 +37,7 @@ export function ProjectCard({ number, title, tags = [], duration, contribution, 
                 <span>도</span>
               </span>
             </div>
-            <div className="flex flex-col gap-[10px] text-forest">
+            <div className="flex flex-col gap-[2px] text-forest">
               <span>{duration}</span>
               <span>{contribution}</span>
             </div>
@@ -58,8 +47,8 @@ export function ProjectCard({ number, title, tags = [], duration, contribution, 
           </p>
         </div>
         <div className="flex gap-[10px] items-center justify-end">
-          {docsHref && <ProjectBtn label="기획서" href={docsHref} />}
-          {linkHref && <ProjectBtn label={linkLabel} href={linkHref} />}
+          {docsHref && <ProjectButton label="기획서" href={docsHref} />}
+          {linkHref && <ProjectButton label={linkLabel} href={linkHref} />}
         </div>
       </div>
     </div>

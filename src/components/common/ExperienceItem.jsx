@@ -14,9 +14,9 @@ export function ExperienceItem({ start, end, title, description, isFirst = false
             className="size-full"
           />
         </div>
-        <span className="font-gmarket text-xs text-dove">{start}</span>
-        <span className="text-xs text-dove">–</span>
-        <span className="font-gmarket text-xs text-dove">{end}</span>
+        <span className="font-gmarket text-xs text-dove tracking-widest">{start}</span>
+        {end && <span className="text-xs text-dove">–</span>}
+        {end && <span className="font-gmarket text-xs text-dove tracking-widest">{end}</span>}
       </div>
       <div className="flex flex-col gap-2">
         <p className="font-gmarket font-normal text-body1 text-charcoal">
