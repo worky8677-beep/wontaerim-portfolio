@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { HeadTitle } from "../components/common/HeadTitle";
 import { ExperienceItem } from "../components/common/ExperienceItem";
 
@@ -46,11 +47,32 @@ const certifications = [
 ];
 
 export default function EduExSection() {
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (leftRef.current) observer.observe(leftRef.current);
+    if (rightRef.current) observer.observe(rightRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="edu-ex" className="w-full min-h-[1080px] bg-white flex items-center justify-center">
       <div className="w-[1280px] flex items-start justify-between px-10">
         {/* 왼쪽: Experience */}
-        <div className="flex flex-col gap-10 w-[557px]">
+        <div ref={leftRef} className="fade-left flex flex-col gap-10 w-[557px]">
           <HeadTitle title="Experience" color="text-forest" />
           <div className="flex flex-col gap-[30px] pl-[18px]">
             {experiences.map((item, i) => (
@@ -60,7 +82,7 @@ export default function EduExSection() {
         </div>
 
         {/* 오른쪽: Education + Certification */}
-        <div className="flex flex-col gap-24 w-[600px]">
+        <div ref={rightRef} className="fade-right flex flex-col gap-24 w-[600px]">
           <div className="flex flex-col gap-10">
             <HeadTitle title="Education" color="text-forest" />
             <div className="flex flex-col gap-[30px] pl-[18px]">

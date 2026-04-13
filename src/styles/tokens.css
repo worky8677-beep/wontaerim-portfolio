@@ -1,7 +1,7 @@
 @theme {
   /* 폰트 */
   --font-sans: "PretendardStd", "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-gmarket: "GMarket Sans", sans-serif;
+  --font-gmarket: "A2Z", sans-serif;
   --font-orelega: "Orelega One", serif;
 
   /* 색상 */
@@ -27,8 +27,8 @@
   /* 텍스트 크기 */
   --text-huge: 120px;
   --text-huge--line-height: 80px;
-  --text-hero: 60px;
-  --text-hero--line-height: 1.6;
+  --text-hero: 70px;
+  --text-hero--line-height: 2;
   --text-display: 48px;
   --text-display--line-height: 78.75px;
   --text-h3: 40px;

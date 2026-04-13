@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { HeadTitle } from "../components/common/HeadTitle";
 import subprofile from "../img/subprofile.png";
 
@@ -18,6 +19,27 @@ function InfoRow({ label, value }) {
 }
 
 export default function AboutSection() {
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (leftRef.current) observer.observe(leftRef.current);
+    if (rightRef.current) observer.observe(rightRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="about"
@@ -25,16 +47,17 @@ export default function AboutSection() {
     >
       <div className="w-full max-w-[1280px] mx-auto px-16 flex items-start gap-16">
         {/* 왼쪽: 사진 */}
-        <div className="shrink-0 w-[400px] h-[560px] bg-white border-b border-silver overflow-hidden">
+        <div ref={leftRef} className="fade-left relative shrink-0 w-[400px] h-[560px] overflow-hidden">
           <img
             src={subprofile}
             alt="원태림"
-            className=" w-full h-full object-cover object-top origin-top"
+            className="w-full h-full object-cover object-top"
           />
+          <div className="absolute bottom-0 left-0 w-full h-5 bg-linear-[to_bottom] from-transparent to-white pointer-events-none" />
         </div>
 
         {/* 오른쪽: 콘텐츠 */}
-        <div className="flex flex-col gap-10 flex-1 bg-white rounded-[24px] px-10 py-10">
+        <div ref={rightRef} className="fade-right flex flex-col gap-10 flex-1 bg-white rounded-[24px] px-10 py-10">
           {/* About me 헤딩 */}
           <div className="flex flex-col gap-5">
             <HeadTitle title="About me" />
