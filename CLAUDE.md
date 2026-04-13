@@ -144,3 +144,6 @@ portfolio/
 
 - 플랫폼: **Render** 또는 **Vercel / GitHub Pages**
 - `index.html` (Vite 빌드 결과)은 반드시 루트 디렉토리에 위치
+
+## 디자인 피크마 링크
+https://www.figma.com/design/WE6mqzQqDDnXWLZyel3Dw2/%EC%9B%90%ED%83%9C%EB%A6%BC-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4?node-id=163-772&m=dev
