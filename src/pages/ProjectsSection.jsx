@@ -4,7 +4,6 @@ import brewdaImg from "../img/projectbrewda.png";
 import aerokImg from "../img/Areok.png";
 import cafe from "../img/cafe.jpg";
 
-
 const projectImg = "https://www.figma.com/api/mcp/asset/b9b2f72c-8328-418a-a588-01c7bd3e245c";
 
 const projects = [
@@ -64,12 +63,17 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="w-full bg-white py-[296px]">
-      <div className="w-[1280px] mx-auto flex flex-col gap-[70px] px-10">
+    <section id="projects" className="w-full bg-white py-[160px]">
+      <div className="w-[1280px] mx-auto flex flex-col gap-[100px] px-10">
         <HeadTitle title="Projects" />
-        <div className="flex flex-col gap-[70px]">
+        <div className="flex flex-col gap-[100px]">
           {projects.map((project) => (
-            <ProjectCard key={project.number} {...project} />
+            <ProjectCard
+              key={project.number}
+              {...project}
+              reverse={project.number % 2 === 0}
+              isFirst={project.number === 1}
+            />
           ))}
         </div>
       </div>
