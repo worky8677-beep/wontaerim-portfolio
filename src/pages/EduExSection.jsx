@@ -4,17 +4,11 @@ import { ExperienceItem } from "../components/common/ExperienceItem";
 
 const experiences = [
   {
-    start: "2020.12",
-    end: "2021.12",
-    title: "문화예술학부 행정조교",
-    description: "학부 행정업무 지원 및 교내 행사 운영 진행",
-    isFirst: true,
-  },
-  {
     start: "2020.02",
     end: "2023.10",
     title: "앨범 제작 프로젝트",
     description: "팀&솔로 앨범 발매. 작사, 작곡, 프로듀싱 및 콘텐츠 제작",
+    isFirst: true,
   },
   {
     start: "2022.12",
@@ -28,27 +22,20 @@ const experiences = [
     title: "여행 유튜브 영상 제작",
     description: "프리미어 프로를 활용한 영상 편집 및 콘텐츠 제작",
   },
-  {
-    start: "2022.03",
-    end: "2025.05",
-    title: "제과점 리피칩 매니저",
-    description: "매장 운영 및 고객 응대, 제과 및 판매",
-  },
 ];
 
 const educations = [
-  { start: "2016.02", end: "2021.02", title: "문화예술학부 실용음악전공", description: "백석대학교" },
-  { start: "2025.10", end: "2026.04", title: "생성형 AI 개발기획자 양성과정", description: "AI를 활용한 코딩 & 영상제작 과정" },
+  { start: "2016.02", end: "2021.02", title: "백석대학교 실용음악전공" },
+  { start: "2025.10", end: "2026.04", title: "생성형 AI 개발기획자 양성과정" },
 ];
-
 const certifications = [
   { start: "2021.02", end: "", title: "문화예술교육사 2급" },
   { start: "2026.01", end: "", title: "GTQ 포토샵 1급" },
 ];
 
 export default function EduExSection() {
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
+  const expRef = useRef(null);
+  const bottomRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,33 +46,38 @@ export default function EduExSection() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
-    if (leftRef.current) observer.observe(leftRef.current);
-    if (rightRef.current) observer.observe(rightRef.current);
+    if (expRef.current) observer.observe(expRef.current);
+    if (bottomRef.current) observer.observe(bottomRef.current);
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="edu-ex" className="w-full min-h-[1080px] bg-white flex items-center justify-center">
-      <div className="w-[1280px] flex items-start justify-between px-10">
-        {/* 왼쪽: Experience */}
-        <div ref={leftRef} className="fade-left flex flex-col gap-10 w-[557px]">
+    <section
+      id="edu-ex"
+      className="w-full bg-white flex items-center justify-center py-[120px]"
+    >
+      <div className="w-[1280px] flex flex-col gap-[80px] px-10">
+        {/* Experience 풀 width */}
+        <div ref={expRef} className="fade-left flex flex-col gap-10">
           <HeadTitle title="Experience" color="text-forest" />
-          <div className="flex flex-col gap-[30px] pl-[18px]">
+          <div className="grid grid-cols-3 gap-x-[60px] gap-y-[30px] pl-[18px]">
             {experiences.map((item, i) => (
               <ExperienceItem key={i} {...item} />
             ))}
           </div>
         </div>
-
-        {/* 오른쪽: Education + Certification */}
-        <div ref={rightRef} className="fade-right flex flex-col gap-24 w-[600px]">
+        {/* Education + Certification 2단 */}
+        <div
+          ref={bottomRef}
+          className="fade-right grid grid-cols-2 gap-x-[60px]"
+        >
           <div className="flex flex-col gap-10">
             <HeadTitle title="Education" color="text-forest" />
-            <div className="flex flex-col gap-[30px] pl-[18px]">
+            <div className="flex flex-col gap-10 pl-[18px]">
               {educations.map((item, i) => (
                 <ExperienceItem key={i} {...item} />
               ))}
@@ -93,7 +85,7 @@ export default function EduExSection() {
           </div>
           <div className="flex flex-col gap-10">
             <HeadTitle title="Certification" color="text-forest" />
-            <div className="flex flex-col gap-[30px] pl-[18px]">
+            <div className="flex flex-col gap-10 pl-[18px]">
               {certifications.map((item, i) => (
                 <ExperienceItem key={i} {...item} />
               ))}

@@ -8,23 +8,23 @@ export function ProjectCard({ number, title, tags = [], duration, contribution, 
       </div>
       <div className="flex flex-col justify-between h-[500px] w-[540px]">
         <div className="flex flex-col gap-5">
-          <p className="font-gmarket text-body3 text-forest tracking-[0.96px]">
+          <p className="font-a2z text-body3 text-forest tracking-[0.96px]">
             Project #{number}
           </p>
-          <h3 className="font-gmarket font-bold text-display text-charcoal tracking-tight">
+          <h3 className="font-a2z font-bold text-display text-charcoal tracking-tight">
             {title}
           </h3>
           <div className="flex gap-[10px] flex-wrap">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-alabaster px-4 py-2 rounded-full font-gmarket text-body3 text-forest tracking-[0.64px]"
+                className="bg-alabaster px-4 py-2 rounded-full font-a2z text-body3 text-forest tracking-[0.64px]"
               >
                 {tag}
               </span>
             ))}
           </div>
-          <div className="flex gap-[27px] font-gmarket font-normal text-sub">
+          <div className="flex gap-[27px] font-a2z font-normal text-sub">
             <div className="flex flex-col gap-[2px] w-[6rem] shrink-0 text-dove">
              <span className="flex justify-between">
               <span>제</span>
@@ -42,7 +42,7 @@ export function ProjectCard({ number, title, tags = [], duration, contribution, 
               <span>{contribution}</span>
             </div>
           </div>
-          <p className="font-gmarket text-body2 text-charcoal leading-[31.5px]">
+          <p className="font-a2z text-body2 text-charcoal leading-[31.5px]">
             {description}
           </p>
         </div>

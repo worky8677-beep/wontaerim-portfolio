@@ -6,7 +6,7 @@ export function LinkButton({ icon, href, children, target, rel }) {
       href={href}
       target={target}
       rel={rel}
-      className="group relative flex items-center gap-3 px-8 py-4 rounded-full border border-lime bg-white overflow-hidden shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)] font-gmarket text-body2 text-dove leading-none"
+      className="group relative flex items-center gap-3 px-8 py-4 rounded-full border border-lime bg-white overflow-hidden shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)] font-a2z text-body2 text-dove leading-none"
     >
       {/* 물결이 아래에서 차오르는 liquid 레이어 */}
       <div

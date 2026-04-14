@@ -31,7 +31,7 @@ export default function AboutSection() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (leftRef.current) observer.observe(leftRef.current);
@@ -47,7 +47,10 @@ export default function AboutSection() {
     >
       <div className="w-full max-w-[1280px] mx-auto px-16 flex items-start gap-16">
         {/* 왼쪽: 사진 */}
-        <div ref={leftRef} className="fade-left relative shrink-0 w-[400px] h-[560px] overflow-hidden">
+        <div
+          ref={leftRef}
+          className="fade-left relative shrink-0 w-[400px] h-full overflow-hidden"
+        >
           <img
             src={subprofile}
             alt="원태림"
@@ -57,40 +60,38 @@ export default function AboutSection() {
         </div>
 
         {/* 오른쪽: 콘텐츠 */}
-        <div ref={rightRef} className="fade-right flex flex-col gap-10 flex-1 bg-white rounded-[24px] px-10 py-10">
+        <div
+          ref={rightRef}
+          className="fade-right flex flex-col gap-10 flex-1 bg-white rounded-[24px] px-10 py-10"
+        >
           {/* About me 헤딩 */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-10">
             <HeadTitle title="About me" />
-
             {/* 이름 */}
-            <div className="flex items-center gap-3 h-[63px]">
-              <span className="font-gmarket font-semibold text-h3 text-charcoal">
+            <div className="flex gap-3 items-baseline">
+              <span className="font-a2z font-semibold text-h3 text-charcoal">
                 원태림
               </span>
-              <span className="font-gmarket font-bold text-h4 text-mine">
+              <span className="font-a2z font-semibold text-h4 text-charcoal">
                 Won Tae Rim
               </span>
             </div>
-
             {/* 상세 정보 */}
             <div className="flex flex-col gap-4">
               <InfoRow label="전화번호" value="010-2256-7019" />
-              <InfoRow label="이메일" value="rolling.of.won@gmail.com" />
+              <InfoRow label="이메일" value="trw9701@gmail.com" />
               <InfoRow label="거주" value="서울시 은평구" />
               <InfoRow label="생년월일" value="1997.01.17" />
             </div>
-          </div>
-
-          {/* 소개 텍스트 */}
-          <div className="font-sans text-sub text-charcoal leading-[42px]">
-            <p>
-              음악을 전공하며 쌓은 콘텐츠 기획력과 사용자 감각을 바탕으로 UX/ UI
-              디자인에 뛰어들었습니다. <strong>HTML, CSS, JavaScript</strong>를
-              직접 학습하며{" "}
-              <strong>개발자와 소통할 수 있는 디자이너를 목표</strong>로
-              앞으로도 배움을 멈추지 않고 함께{" "}
-              <strong>성장하는 디자이너</strong>가 되겠습니다.
-            </p>
+            {/* 소개 텍스트 */}
+            <div className="font-sans text-sub text-charcoal leading-[42px]">
+              <p>
+                음악을 만들고, 영상을 찍고, 무대를 기획했습니다. 무엇을 해도 <br /> "어떻게 하면
+                더 잘 전달될까"를 고민해온 사람입니다. 그 질문이 저를 UI/UX
+                디자인으로 데려왔습니다. 배움과 만드는 일을 멈춘 적이 없습니다.{" "}
+                좋은 경험을 만드는 디자이너로 계속 나아가겠습니다.
+              </p>
+            </div>{" "}
           </div>
         </div>
       </div>

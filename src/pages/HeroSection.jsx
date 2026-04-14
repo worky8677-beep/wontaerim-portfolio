@@ -21,10 +21,10 @@ export default function HeroSection() {
         {/* 왼쪽: 텍스트 + 버튼 */}
         <div className="absolute left-16 top-1/3 -translate-y-1/2 flex flex-col gap-20 w-[50%]">
           <div>
-            <p className="font-gmarket font-bold text-hero text-dove">
+            <p className="font-a2z font-bold text-hero text-dove">
               원하는 형태로 울림있게
             </p>
-            <p className="font-gmarket font-bold text-hero text-dove flex items-center gap-4">
+            <p className="font-a2z font-bold text-hero text-dove flex items-center gap-4">
               <span className="bg-lime px-2">크리에이터</span> 원태림입니다
             </p>
           </div>
@@ -53,33 +53,36 @@ export default function HeroSection() {
         {/* 오른쪽: 사진 + 블롭 */}
         <div className="absolute right-0 top-0 w-[50%] h-full">
           {/* 원 1: 우상단 큰 원 */}
-          <div className="absolute rounded-full bg-cream opacity-40 mix-blend-hard-light w-[420px] h-[420px] right-[2%] top-[10%] pointer-events-none" />
+          <div className="absolute rounded-full bg-cream opacity-40 mix-blend-hard-light w-[420px] h-[420px] right-[2%] top-[10%] pointer-events-none z-[1]" />
           {/* 원 2: 좌하단 작은 원 */}
-          <div className="absolute rounded-full bg-chartreuse opacity-35 mix-blend-hard-light w-[300px] h-[300px] left-[2%] bottom-[20%] pointer-events-none" />
+          <div className="absolute rounded-full bg-chartreuse opacity-35 mix-blend-hard-light w-[300px] h-[300px] left-[2%] bottom-[20%] pointer-events-none z-[1]" />
 
           {/* 별들 */}
           <img
             src={northStar}
             alt=""
-            className="twinkle-1 absolute left-[30%] top-[15%] size-[52px] z-[5] pointer-events-none"
+            style={{ animation: 'twinkle-a 5.3s ease-in-out infinite' }}
+            className="absolute left-[30%] top-[15%] size-[52px] z-[5] pointer-events-none"
           />
           <img
             src={northStar}
             alt=""
-            className="twinkle-2 absolute right-[2%] bottom-[35%] size-[52px] z-[5] pointer-events-none"
+            style={{ animation: 'twinkle-b 4.1s ease-in-out 0.7s infinite' }}
+            className="absolute right-[2%] bottom-[35%] size-[52px] z-[5] pointer-events-none"
           />
-          <span className="twinkle-3 absolute right-[31%] top-[19%] text-[22px] text-lime z-[5] pointer-events-none">
+          <span style={{ animation: 'twinkle-c 5.9s ease-in-out 0.3s infinite' }} className="absolute right-[31%] top-[19%] text-[22px] text-lime z-[5] pointer-events-none">
             ✦
           </span>
-          <span className="twinkle-4 absolute left-[18%] top-[55%] text-[28px] text-lime z-[5] pointer-events-none">
+          <span style={{ animation: 'twinkle-a 4.8s ease-in-out 0.4s infinite' }} className="absolute left-[18%] top-[55%] text-[28px] text-lime z-[5] pointer-events-none">
             ✦
           </span>
           <img
             src={Star}
             alt=""
-            className="twinkle-5 absolute left-[18%] top-[30%] size-[16px] z-[5] pointer-events-none"
+            style={{ animation: 'twinkle-b 3.1s ease-in-out 0.8s infinite' }}
+            className="absolute left-[18%] top-[30%] size-[16px] z-[5] pointer-events-none"
           />
-          <span className="twinkle-6 absolute right-[2%] bottom-[50%] text-[22px] text-lime z-[5] pointer-events-none">
+          <span style={{ animation: 'twinkle-c 3.5s ease-in-out 0.9s infinite' }} className="absolute right-[2%] bottom-[50%] text-[22px] text-lime z-[5] pointer-events-none">
             ✦
           </span>
 

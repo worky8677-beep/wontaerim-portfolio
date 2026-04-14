@@ -10,9 +10,9 @@ export function OtherCard({ image, category, title, href = "#" }) {
       </div>
       <div className="p-6 flex flex-col gap-2">
         {category && (
-          <span className="font-gmarket text-xs text-dove tracking-[0.64px] uppercase">{category}</span>
+          <span className="font-a2z text-xs text-dove tracking-[0.64px] uppercase">{category}</span>
         )}
-        <h4 className="font-gmarket font-bold text-sub text-forest">{title}</h4>
+        <h4 className="font-a2z font-bold text-sub text-forest">{title}</h4>
       </div>
     </a>
   );

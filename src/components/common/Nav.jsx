@@ -39,7 +39,7 @@ export function Nav() {
         }}
       >
         <div className="w-10 h-10 rounded-[50px] bg-lime" />
-        <div className="flex gap-[30px] font-gmarket text-label tracking-[0.72px] uppercase text-dove">
+        <div className="flex gap-[30px] font-a2z text-label tracking-[0.72px] uppercase text-dove">
           <a href="#about" className="hover:text-forest transition-colors">About ME</a>
           <a href="#edu-ex" className="hover:text-forest transition-colors">Experience</a>
           <a href="#projects" className="hover:text-forest transition-colors">Projects</a>

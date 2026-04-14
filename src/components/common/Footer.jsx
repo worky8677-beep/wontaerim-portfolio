@@ -41,16 +41,16 @@ export function Footer() {
 
         {/* 오른쪽: 텍스트 */}
         <div className="w-1/2 flex flex-col gap-6">
-          <p className="font-gmarket font-bold text-h3 text-forest">
+          <p className="font-a2z font-bold text-h3 text-forest">
             Let's talk!
           </p>
           <a
             href="mailto:trw9701@gmail.com"
-            className="font-gmarket font-bold text-[64px] leading-tight text-forest tracking-[-1.6px] hover:text-dove transition-colors"
+            className="font-a2z font-bold text-[64px] leading-tight text-forest tracking-[-1.6px] hover:text-dove transition-colors"
           >
             trw9701@gmail.com
           </a>
-          <p className="font-gmarket font-bold text-h4 text-mine">
+          <p className="font-a2z font-bold text-h4 text-mine">
             010-2256-7019
           </p>
         </div>

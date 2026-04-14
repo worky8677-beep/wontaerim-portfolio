@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import { HeadTitle } from "../components/common/HeadTitle";
 import { SkillCircle } from "../components/common/SkillCircle";
 
@@ -15,8 +16,26 @@ const skills = [
 ];
 
 export default function SkillsSection() {
+  const sectionRef = useRef(null);
+  const [triggered, setTriggered] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTriggered(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="skills"
       className="w-full min-h-[1080px] bg-white flex items-center justify-center"
     >
@@ -25,12 +44,12 @@ export default function SkillsSection() {
         <div className="flex flex-col gap-[90px]">
           <div className="flex justify-between">
             {skills.slice(0, 5).map((skill, i) => (
-              <SkillCircle key={i} {...skill} />
+              <SkillCircle key={i} triggered={triggered} {...skill} />
             ))}
           </div>
           <div className="flex justify-between">
             {skills.slice(5, 10).map((skill, i) => (
-              <SkillCircle key={i} {...skill} />
+              <SkillCircle key={i} triggered={triggered} {...skill} />
             ))}
           </div>
         </div>
