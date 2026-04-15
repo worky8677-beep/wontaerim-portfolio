@@ -24,7 +24,7 @@ export function Nav() {
       className="fixed top-0 inset-x-0 z-50"
       style={{
         padding: scrolled
-          ? `12px clamp(24px, calc((100% - 1200px) / 2), 9999px)`
+          ? `12px clamp(24px, calc((100% - 1280px) / 2), 9999px)`
           : "0",
         transition: `padding ${spring}`,
       }}
@@ -39,7 +39,7 @@ export function Nav() {
           transition: `border-radius ${spring}, background ${spring}, box-shadow 0.3s ease`,
         }}
       >
-        <div className="w-10 h-10 rounded-[50px] bg-lime" />
+        <img src={logoImg} className="h-10 w-auto" />
         <div className="flex gap-[30px] font-a2z text-label tracking-[0.72px] uppercase text-dove">
           <a href="#about" className="hover:text-forest transition-colors">About ME</a>
           <a href="#edu-ex" className="hover:text-forest transition-colors">Experience</a>

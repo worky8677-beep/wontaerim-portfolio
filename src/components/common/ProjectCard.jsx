@@ -1,14 +1,16 @@
 import { ProjectButton } from "./ProjectButton";
 
-export function ProjectCard({ number, title, tags = [], duration, contribution, description, image, docsHref, linkLabel, linkHref, reverse, isFirst }) {
+export function ProjectCard({ number, title, tags = [], duration, contribution, description, image, embed, docsHref, docsLabel = "기획서", docs2Href, docs2Label, linkLabel, linkHref, reverse, isFirst }) {
   return (
     <div className="flex flex-col">
-      {!isFirst && <div className="w-full h-px bg-gallery mb-16" />}
 
       <div className={`flex gap-20 items-center ${reverse ? "flex-row-reverse" : "flex-row"}`}>
 
         <div className="shrink-0 w-[540px] h-[400px] rounded-[20px] overflow-hidden">
-          <img src={image} alt={title} className="w-full h-full object-cover" />
+          {embed
+            ? <iframe src={embed} className="w-full h-full" allowFullScreen />
+            : <img src={image} alt={title} className="w-full h-full object-cover" />
+          }
         </div>
 
         <div className="flex flex-col gap-6 flex-1">
@@ -46,7 +48,8 @@ export function ProjectCard({ number, title, tags = [], duration, contribution, 
             {description}
           </p>
           <div className="flex gap-[10px] items-center">
-            {docsHref && <ProjectButton label="기획서" href={docsHref} />}
+            {docsHref && <ProjectButton label={docsLabel} href={docsHref} />}
+            {docs2Href && <ProjectButton label={docs2Label} href={docs2Href} />}
             {linkHref && <ProjectButton label={linkLabel} href={linkHref} />}
           </div>
         </div>
