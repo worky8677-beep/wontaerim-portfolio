@@ -1,17 +1,16 @@
-export function OtherCard({ image, title, desc, href, aspect = "square" }) {
-  const aspectMap = {
-    square: "aspect-square",
-    video: "aspect-video",
-  };
-
-  const Tag = href ? "a" : "div";
-
+export function OtherCard({ image, title, desc, isSelected, onClick }) {
   return (
-    <Tag href={href} className="group w-full cursor-pointer">
+    <div
+      onClick={onClick}
+      className={`group w-full cursor-pointer rounded-[24px] p-2 transition-all duration-300 ${
+        isSelected
+          ? "bg-[#fffeba]"
+          : "bg-transparent hover:bg-alabaster"
+      }`}
+    >
       <div
-        className={`relative w-full ${aspectMap[aspect]} rounded-[24px] overflow-hidden shadow-[0px_10px_31px_0px_rgba(0,0,0,0.03)]`}
+        className="relative w-full h-[260px] rounded-[18px] overflow-hidden"
       >
-        {/* 이미지 */}
         {image ? (
           <img
             src={image}
@@ -36,6 +35,6 @@ export function OtherCard({ image, title, desc, href, aspect = "square" }) {
           </div>
         </div>
       </div>
-    </Tag>
+    </div>
   );
 }

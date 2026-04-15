@@ -1,16 +1,48 @@
+import { useEffect, useRef, useState } from "react";
 import { ProjectButton } from "./ProjectButton";
 
-export function ProjectCard({ number, title, tags = [], duration, contribution, description, image, embed, docsHref, docsLabel = "기획서", docs2Href, docs2Label, linkLabel, linkHref, reverse, isFirst }) {
+export function ProjectCard({ number, title, tags = [], duration, contribution, description, image, embed, bgImage, docsHref, docsLabel = "기획서", docs2Href, docs2Label, linkLabel, linkHref, reverse, isFirst }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex flex-col">
+    <div
+      ref={ref}
+      className={`flex flex-col transition-none ${visible ? (reverse ? "animate-slide-from-right-slow" : "animate-slide-from-left") : "opacity-0"}`}
+    >
 
       <div className={`flex gap-20 items-center ${reverse ? "flex-row-reverse" : "flex-row"}`}>
 
-        <div className="shrink-0 w-[540px] h-[400px] rounded-[20px] overflow-hidden">
-          {embed
-            ? <iframe src={embed} className="w-full h-full" allowFullScreen />
-            : <img src={image} alt={title} className="w-full h-full object-cover" />
-          }
+        <div
+          className="shrink-0 w-[540px] h-[480px] rounded-[20px] overflow-hidden relative"
+          style={bgImage ? { backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" } : {}}
+        >
+          {embed && bgImage ? (
+            <div
+              className="absolute overflow-hidden rounded-[36px]"
+              style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)", width: "220px", height: "460px" }}
+            >
+              <iframe
+                src={embed}
+                className="absolute"
+                style={{ left: "-50px", top: "-115px", width: "320px", height: "690px" }}
+                allowFullScreen
+              />
+            </div>
+          ) : embed ? (
+            <iframe src={embed} className="w-full h-full" allowFullScreen />
+          ) : (
+            <img src={image} alt={title} className="w-full h-full object-cover" />
+          )}
         </div>
 
         <div className="flex flex-col gap-6 flex-1">

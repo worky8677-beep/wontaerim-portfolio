@@ -1,8 +1,10 @@
 import { HeadTitle } from "../components/common/HeadTitle";
 import { ProjectCard } from "../components/common/ProjectCard";
 import brewdaImg from "../img/projectbrewda.png";
-import aerokImg from "../img/Areok.png";
+import brewdaBgImg from "../img/brewda.png";
+import aerokImg from "../img/Aerok.png";
 import cafe from "../img/cafe.jpg";
+import rookiz from "../img/rookiz.png";
 
 const projectImg = "https://www.figma.com/api/mcp/asset/b9b2f72c-8328-418a-a588-01c7bd3e245c";
 
@@ -16,8 +18,9 @@ const projects = [
     description:
       "피그마를 이용해서 작업한 팀프로젝트 입니다! 저는 주로 디자인을 맡아 작업하였고 팀원들과 함께한 기획에 맞춰 어플을 리디자인 했습니다. 피그마를 이용해 처음 했던 협업이라 피그마를 익히며 작업했던 기억이 납니다.",
     image: brewdaImg,
+    bgImage: brewdaBgImg,
     embed:
-      "https://embed.figma.com/proto/0HWO0KeTPRSWFqPFsiozAp/3%ED%8C%80-%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B8%8C%EB%A3%A8%EB%8B%A4%EC%BB%A4%ED%94%BC?node-id=4-2&page-id=0%3A1&starting-point-node-id=4%3A59&embed-host=share",
+      "https://embed.figma.com/proto/0HWO0KeTPRSWFqPFsiozAp/3%ED%8C%80-%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B8%8C%EB%A3%A8%EB%8B%A4%EC%BB%A4%ED%94%BC?node-id=4-2&scaling=scale-down&content-scaling=responsive&starting-point-node-id=4%3A59&page-id=0%3A1&embed-host=share&hide-ui=1",
     docsHref: "https://www.figma.com/deck/7XbK3mX0A5Mh7KpRKrep6A",
     docsLabel: "기획서",
     linkLabel: "프로토타입",
@@ -40,6 +43,7 @@ const projects = [
 
     linkLabel: "깃허브",
     linkHref: "https://github.com/worky8677-beep/rookiz-deploy.git",
+    image: rookiz,
   },
   {
     number: 3,
