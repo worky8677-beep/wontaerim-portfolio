@@ -15,6 +15,9 @@ export const ogqItems = [
     aspect: "square",
     image: ogqRedImg,
     detailImage: ogqRedDetailImg,
+    releaseDate: "",
+    program: "프로크리에이트",
+    description: "",
     href: null,
   },
   {
@@ -24,6 +27,9 @@ export const ogqItems = [
     aspect: "square",
     image: ogqYellowImg,
     detailImage: ogqYellowDetailImg,
+    releaseDate: "",
+    program: "프로크리에이트",
+    description: "",
     href: null,
   },
   {
@@ -33,6 +39,9 @@ export const ogqItems = [
     aspect: "square",
     image: ogqPurpleImg,
     detailImage: ogqPurpleDetailImg,
+    releaseDate: "",
+    program: "프로크리에이트",
+    description: "",
     href: null,
   },
   {
@@ -42,6 +51,9 @@ export const ogqItems = [
     aspect: "square",
     image: ogqBlueImg,
     detailImage: ogqBlueDetailImg,
+    releaseDate: "",
+    program: "프로크리에이트",
+    description: "",
     href: null,
   },
 ];

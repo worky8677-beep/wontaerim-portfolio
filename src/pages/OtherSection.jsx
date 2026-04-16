@@ -43,7 +43,6 @@ export default function OtherSection() {
   function handleCardClick(item) {
     if (item.category !== "Music" && item.category !== "OGQ") return;
     setSelected((prev) => (prev?.id === item.id ? null : item));
-    setPage(0);
   }
 
   function handleTab(tab) {
@@ -75,7 +74,7 @@ export default function OtherSection() {
         </div>
 
         {/* 슬라이더 + 상세 패널 */}
-        <div className="flex gap-8 items-stretch h-[560px]">
+        <div className="flex gap-8 items-stretch h-[578px]">
           {/* 슬라이더 영역 */}
           <div
             className={`relative flex-shrink-0 transition-all duration-500 ${selected ? "w-[584px]" : "w-full"}`}
@@ -127,7 +126,7 @@ export default function OtherSection() {
             className={`flex-shrink-0 overflow-hidden transition-all duration-500 ${selected ? "w-[584px]" : "w-0"}`}
           >
             <div
-              className={`w-[584px] h-full transition-transform duration-500 ease-in-out ${selected ? "translate-x-0" : "translate-x-full"}`}
+              className={`w-[584px] h-full transition-transform duration-500 ease-in-out p-2  ${selected ? "translate-x-0" : "translate-x-full"}`}
             >
               {selected?.category === "OGQ" ? (
                 <OGQDescCard

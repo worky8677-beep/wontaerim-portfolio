@@ -1,5 +1,9 @@
 import { useState } from "react";
+import { faFileLines } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { LinkButton } from "./LinkButton";
 import subprofile from "../../img/profile.png";
+import resumePdf from "../../img/resume_20260413.pdf";
 
 function CopyItem({ text, children, className }) {
   const [state, setState] = useState("idle"); // idle | hover | copied
@@ -43,29 +47,29 @@ function CopyItem({ text, children, className }) {
   );
 }
 
-// 상단 스캘럽 경로 생성 (흰 배경이 반원으로 파고드는 형태)
-const r = 24;
-const count = 32;
+// 상단 스캘럽 경로 생성 (녹색 버블이 위로 솟아오르는 형태)
+const r = 40;
+const count = 20;
 const totalW = count * r * 2;
 const scallopsPath =
-  `M0,0 H${totalW} V${r} ` +
+  `M0,${r} ` +
   Array.from({ length: count }, (_, i) =>
-    `A${r},${r} 0 0,1 ${totalW - (i + 1) * r * 2},${r}`
+    `A${r},${r} 0 0,0 ${(i + 1) * r * 2},${r}`
   ).join(" ") +
-  " Z";
+  ` V${r * 2} H0 Z`;
 
 export function Footer() {
   return (
-    <footer id="contact" className="relative overflow-hidden min-h-[700px] bg-linear-[to_bottom] from-[#dfffab] to-white">
-      {/* 상단 스캘럽 */}
+    <footer id="contact" className="relative z-10 overflow-x-hidden min-h-[700px] bg-linear-[to_bottom] from-[#dfffab] to-white">
+      {/* 상단 스캘럽 — 녹색 버블이 위로 솟아오름 */}
       <svg
         viewBox={`0 0 ${totalW} ${r * 2}`}
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-0 left-0 w-full z-10"
-        style={{ height: `${r * 2}px` }}
+        className="absolute left-0 w-full z-10"
+        style={{ top: `-${r}px`, height: `${r * 2}px` }}
       >
-        <path d={scallopsPath} fill="white" />
+        <path d={scallopsPath} fill="#dfffab" />
       </svg>
 
       {/* 콘텐츠 */}
@@ -99,6 +103,16 @@ export function Footer() {
           >
             010-2256-7019
           </CopyItem>
+
+          {/* 버튼 */}
+          <div className="flex gap-5 mt-2">
+            <LinkButton icon={faGithub} href="https://github.com/worky8677-beep" target="_blank" rel="noreferrer">
+              깃허브 보기
+            </LinkButton>
+            <LinkButton icon={faFileLines} href={resumePdf} target="_blank" rel="noreferrer">
+              이력서 보기
+            </LinkButton>
+          </div>
         </div>
       </div>
     </footer>
