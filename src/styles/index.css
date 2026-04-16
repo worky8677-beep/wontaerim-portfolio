@@ -50,6 +50,32 @@ body {
 }
 
 
+/* 단어 스크롤러 */
+@keyframes word-scroll {
+  0%, 35%  { transform: translateY(0); }
+  45%, 80% { transform: translateY(-70px); }
+  90%, 100%{ transform: translateY(0); }
+}
+.word-scroller-wrap {
+  display: inline-block;
+  overflow: hidden;
+  height: 70px;
+  vertical-align: bottom;
+}
+.word-scroller {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  animation: word-scroll 6s cubic-bezier(0.645, 0.045, 0.355, 1) 2.5s infinite;
+}
+.word-scroller > span {
+  display: block;
+  height: 70px;
+  line-height: 70px;
+  white-space: nowrap;
+  text-align: center;
+}
+
 /* 텍스트 reveal — 아래에서 올라오기 */
 @keyframes text-reveal {
   0%   { transform: translateY(110%); }
@@ -62,7 +88,7 @@ body {
   100% { background-size: 100% 100%; }
 }
 .highlight-lime {
-  background-image: linear-gradient(to bottom, var(--color-chartreuse), var(--color-chartreuse));
+  background-image: linear-gradient(to bottom, color-mix(in srgb, var(--color-chartreuse) 30%, transparent), color-mix(in srgb, var(--color-chartreuse) 30%, transparent));
   background-size: 0% 100%;
   background-position: left 60%;
   background-repeat: no-repeat;

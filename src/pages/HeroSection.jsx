@@ -38,7 +38,7 @@ export default function HeroSection() {
                 style={{ animation: 'text-reveal 1.1s cubic-bezier(0.34, 1.4, 0.64, 1) 0.45s both' }}
               >
                 {/* 번갈아 슬라이딩되는 단어 슬롯 */}
-                <span className="highlight-lime px-2">
+                <span className="highlight-lime px-2" style={{ lineHeight: '70px' }}>
                   <ScrambleText />
                 </span>
                 원태림입니다
