@@ -5,13 +5,16 @@ export function OGQDescCard({ item, onClose }) {
   if (!item) return null;
 
   return (
-    <div className="w-full h-full rounded-[24px] overflow-hidden relative">
-
-      {/* 배경 이미지 */}
-      {item.image ? (
-        <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+    <div className="group w-full h-full rounded-[24px] overflow-hidden relative">
+      {/* 스크롤 이미지 */}
+      {item.detailImage ? (
+        <img
+          src={item.detailImage}
+          alt={item.title}
+          className="w-full h-auto translate-y-0 group-hover:-translate-y-[calc(100%-560px)] transition-transform duration-[2500ms] ease-in-out"
+        />
       ) : (
-        <div className="absolute inset-0 bg-alabaster" />
+        <div className="w-full h-full bg-alabaster" />
       )}
 
       {/* 닫기 버튼 */}
@@ -24,10 +27,12 @@ export function OGQDescCard({ item, onClose }) {
 
       {/* 하단 텍스트 — 흰색 그라디언트 위에 */}
       <div className="absolute bottom-0 left-0 right-0 px-7 pb-8 pt-28 bg-linear-[180deg] from-white/0 to-white">
-
         {/* 제목 + 카테고리 태그 */}
         <div className="flex items-center gap-3 mb-5">
-          <h4 className="font-a2z font-bold text-charcoal" style={{ fontSize: "40px", lineHeight: "1.2" }}>
+          <h4
+            className="font-a2z font-bold text-charcoal whitespace-pre-line"
+            style={{ fontSize: "40px", lineHeight: "1.2" }}
+          >
             {item.title}
           </h4>
           <span className="bg-white px-4 py-2 rounded-full font-a2z text-sm text-charcoal tracking-[0.64px] uppercase shrink-0">

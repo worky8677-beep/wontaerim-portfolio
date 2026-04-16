@@ -55,9 +55,9 @@ export function OtherDescCard({ item, onClose }) {
       </div>
 
       {/* 설명 */}
-      {item.desc && (
+      {item.description && (
         <p className="font-a2z text-[18px] text-charcoal leading-[1.75] tracking-[0.5px]">
-          {item.desc}
+          {item.description}
         </p>
       )}
 

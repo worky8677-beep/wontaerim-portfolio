@@ -9,7 +9,10 @@
       "Bash(pkill -f \"vite\")",
       "mcp__claude_ai_Figma__get_screenshot",
       "Bash(npx vite:*)",
-      "Bash(xargs sed:*)"
+      "Bash(xargs sed:*)",
+      "Bash(mv musicItems.jsx MusicItems.jsx)",
+      "Bash(mv youtubeItems.jsx YoutubeItems.jsx)",
+      "Bash(mv ogqItems.jsx OgqItems.jsx)"
     ]
   }
 }
