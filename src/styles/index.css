@@ -49,6 +49,26 @@ body {
   animation: wave-flow 8s linear infinite; /* ← 숫자 바꾸면 속도 조절 */
 }
 
+
+/* 텍스트 reveal — 아래에서 올라오기 */
+@keyframes text-reveal {
+  0%   { transform: translateY(110%); }
+  100% { transform: translateY(0); }
+}
+
+/* 형광펜 — 왼쪽에서 오른쪽으로 칠해지기 */
+@keyframes highlighter {
+  0%   { background-size: 0% 100%; }
+  100% { background-size: 100% 100%; }
+}
+.highlight-lime {
+  background-image: linear-gradient(to bottom, var(--color-chartreuse), var(--color-chartreuse));
+  background-size: 0% 100%;
+  background-position: left 60%;
+  background-repeat: no-repeat;
+  animation: highlighter 0.5s ease-out 1.6s forwards;
+}
+
 /* 별 반짝임 애니메이션 */
 @keyframes twinkle-a {
   0%, 100% { transform: scale(1); opacity: 0.8; }

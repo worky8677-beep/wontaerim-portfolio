@@ -2,6 +2,7 @@ import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Fiveline } from "../components/common/Fiveline";
 import { LinkButton } from "../components/common/LinkButton";
+import { ScrambleText } from "../components/common/ScrambleText";
 import taerimPhoto from "../img/mainprofile.png";
 import resumePdf from "../img/resume_20260413.pdf";
 import northStar from "../img/icon-northstar.png";
@@ -19,14 +20,30 @@ export default function HeroSection() {
       <div className="relative z-10 w-full h-full flex items-center">
         <div className="relative w-full max-w-[1654px] mx-auto h-full px-16">
         {/* 왼쪽: 텍스트 + 버튼 */}
-        <div className="absolute left-16 top-1/3 -translate-y-1/2 flex flex-col gap-20 w-[50%]">
+        <div className="absolute left-16 top-1/3 -translate-y-1/2 flex flex-col gap-20 w-[60%]">
           <div>
-            <p className="font-a2z font-bold text-hero text-dove">
-              원하는 형태로 울림있게
-            </p>
-            <p className="font-a2z font-bold text-hero text-dove flex items-center gap-4">
-              <span className="bg-lime px-2">크리에이터</span> 원태림입니다
-            </p>
+            {/* 줄 1 — 먼저 올라옴 */}
+            <div className="overflow-hidden">
+              <p
+                className="font-a2z font-bold text-hero text-dove"
+                style={{ animation: 'text-reveal 1.1s cubic-bezier(0.34, 1.4, 0.64, 1) 0.2s both' }}
+              >
+                원하는 형태로 울림있게
+              </p>
+            </div>
+            {/* 줄 2 — 0.25s 뒤에 올라옴 */}
+            <div className="overflow-hidden">
+              <p
+                className="font-a2z font-bold text-hero text-dove flex items-center gap-4"
+                style={{ animation: 'text-reveal 1.1s cubic-bezier(0.34, 1.4, 0.64, 1) 0.45s both' }}
+              >
+                {/* 번갈아 슬라이딩되는 단어 슬롯 */}
+                <span className="highlight-lime px-2">
+                  <ScrambleText />
+                </span>
+                원태림입니다
+              </p>
+            </div>
           </div>
 
           {/* 버튼 */}
