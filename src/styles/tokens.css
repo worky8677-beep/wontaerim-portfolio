@@ -1,0 +1,77 @@
+@theme {
+  /* 폰트 */
+  --font-sans: "PretendardStd", "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-paperlogy: "Paperlogy", sans-serif;
+  --font-a2z: "A2Z", sans-serif;
+  --font-orelega: "Orelega One", serif;
+
+  /* 색상 */
+  --color-lime: #d7f0ac;
+  --color-forest: #3d413e;
+  --color-dove: #666666;
+  --color-silver: #cccccc;
+  --color-mine: #292929;
+  --color-shark: #454545;
+  --color-gallery: #a7a7a7;
+  --color-alabaster: #f3f3f3;
+  --color-snowflake: #f3f6ee;
+  --color-btn-pink: #f0ace8;
+  --color-btn-blue: #acd7f0;
+  --color-orchid: #af2c9f;
+  --color-cobalt: #2367b8;
+  --color-charcoal: #444444;
+  --color-olive: #777876;
+  --color-fern: #476813;
+  --color-cream: #FFFEBA;
+  --color-chartreuse: #f2ffaf;
+  --color-mint: #dfffab;
+
+  /* 텍스트 크기 */
+  --text-huge: 120px;
+  --text-huge--line-height: 80px;
+  --text-hero: clamp(36px, 5vw, 96px);
+  --text-hero--line-height: 2;
+  --text-display: 48px;
+  --text-display--line-height: 78.75px;
+  --text-h3: 40px;
+  --text-h3--line-height: 1;
+  --text-h4: 32px;
+  --text-h4--line-height: 3;
+  --text-h5: 28px;
+  --text-h5--line-height: 1;
+  --text-sub: 24px;
+  --text-sub--line-height: 42px;
+  --text-body1: 20px;
+  --text-body1--line-height: 1;
+  --text-body2: 18px;
+  --text-body2--line-height: 31.5px;
+  --text-body3: 16px;
+  --text-body3--line-height: 24px;
+  --text-label: 15px;
+  --text-label--line-height: 1;
+  --text-xs: 12px;
+  --text-xs--line-height: 1;
+
+  /* 애니메이션 — OtherSection 페이지 슬라이드 전환 */
+  --animate-slide-from-right: slide-from-right 0.4s ease both;
+
+  /* line-height 독립 토큰 */
+  --leading-2: 20px;
+  --leading-4: 28px;
+  --leading-6: 36px;
+  --leading-8: 48px;
+  --leading-10: 60px;
+}
+
+@keyframes slide-from-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* 모바일(세로 비율): 본문 글자 최소 16px 보장 */
+@media (max-aspect-ratio: 1/1) {
+  :root {
+    --text-label: 16px;
+    --text-xs: 16px;
+  }
+}

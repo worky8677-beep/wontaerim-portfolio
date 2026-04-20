@@ -1,0 +1,162 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-std.min.css");
+@import url("https://fonts.cdnfonts.com/css/orelega-one");
+
+@import "tailwindcss";
+@import "./tokens.css";
+
+@custom-variant desktop (@media (min-aspect-ratio: 1/1));
+
+@font-face { font-family: "Paperlogy"; font-weight: 100; src: url('../font/Paperlogy-1.001/Paperlogy-1Thin.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: "Paperlogy"; font-weight: 200; src: url('../font/Paperlogy-1.001/Paperlogy-2ExtraLight.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: "Paperlogy"; font-weight: 300; src: url('../font/Paperlogy-1.001/Paperlogy-3Light.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: "Paperlogy"; font-weight: 400; src: url('../font/Paperlogy-1.001/Paperlogy-4Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: "Paperlogy"; font-weight: 500; src: url('../font/Paperlogy-1.001/Paperlogy-5Medium.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: "Paperlogy"; font-weight: 600; src: url('../font/Paperlogy-1.001/Paperlogy-6SemiBold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: "Paperlogy"; font-weight: 700; src: url('../font/Paperlogy-1.001/Paperlogy-7Bold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: "Paperlogy"; font-weight: 800; src: url('../font/Paperlogy-1.001/Paperlogy-8ExtraBold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: "Paperlogy"; font-weight: 900; src: url('../font/Paperlogy-1.001/Paperlogy-9Black.ttf') format('truetype'); font-display: swap; }
+
+@font-face { font-family: "A2Z"; font-weight: 100; src: url('../font/a2z-1Thin.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "A2Z"; font-weight: 200; src: url('../font/a2z-2ExtraLight.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "A2Z"; font-weight: 300; src: url('../font/a2z-3Light.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "A2Z"; font-weight: 400; src: url('../font/a2z-4Regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "A2Z"; font-weight: 500; src: url('../font/a2z-5Medium.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "A2Z"; font-weight: 600; src: url('../font/a2z-6SemiBold.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "A2Z"; font-weight: 700; src: url('../font/a2z-7Bold.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "A2Z"; font-weight: 800; src: url('../font/a2z-8ExtraBold.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: "A2Z"; font-weight: 900; src: url('../font/a2z-9Black.woff2') format('woff2'); font-display: swap; }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: white;
+  color: var(--color-mine);
+  overflow-x: clip;
+}
+/* 물결 애니메이션 */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+@keyframes move-forever {
+  0%   { transform: translate3d(-90px, 0, 0); }
+  100% { transform: translate3d(85px, 0, 0); }
+}
+/* 버튼 liquid 물결 애니메이션 */
+@keyframes wave-flow {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.wave-svg {
+  animation: wave-flow 8s linear infinite; /* ← 숫자 바꾸면 속도 조절 */
+}
+
+
+/* 단어 스크롤러 */
+@keyframes word-scroll {
+  0%, 35%  { transform: translateY(0); }
+  45%, 80% { transform: translateY(calc(-1 * var(--text-hero))); }
+  90%, 99% { transform: translateY(calc(-2 * var(--text-hero))); }
+  100%     { transform: translateY(calc(-2 * var(--text-hero))); }
+}
+.word-scroller-wrap {
+  display: inline-block;
+  overflow: hidden;
+  height: var(--text-hero);
+  vertical-align: bottom;
+}
+.word-scroller {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  animation: word-scroll 7s cubic-bezier(0.645, 0.045, 0.355, 1) 2.5s infinite;
+}
+.word-scroller > span {
+  display: block;
+  height: var(--text-hero);
+  line-height: var(--text-hero);
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* 원·태·림 글자 점프 */
+@keyframes jump {
+  0%, 12%  { top: 0; }
+  18%      { top: -10px; }
+  26%, 100%{ top: 0; }
+}
+@keyframes jump-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.jump-1, .jump-2, .jump-3 {
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(90deg, var(--color-fern), var(--color-orchid), var(--color-cobalt), var(--color-fern));
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: jump 4s ease infinite, jump-gradient 4s linear infinite;
+}
+.jump-2 { animation-delay: 0.92s, 0s; }
+.jump-3 { animation-delay: 1.84s, 0s; }
+
+/* 형광펜 — 왼쪽→오른쪽 칠해지기 */
+@keyframes highlighter {
+  0%   { background-size: 0% 100%; }
+  100% { background-size: 100% 100%; }
+}
+.highlight-lime {
+  background-image: linear-gradient(to bottom, color-mix(in srgb, var(--color-chartreuse) 30%, transparent), color-mix(in srgb, var(--color-chartreuse) 30%, transparent));
+  background-size: 0% 100%;
+  background-position: left 60%;
+  background-repeat: no-repeat;
+  animation: highlighter 0.5s ease-out 1.6s forwards;
+}
+
+/* 프로젝트 버튼 — 호버 형광펜 + 올라오기 */
+.project-btn {
+  background-image: linear-gradient(to right, var(--color-lime), var(--color-lime));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size 0.7s ease-in-out, color 0.5s ease-in-out;
+}
+.project-btn:hover {
+  background-size: 100% 100%;
+}
+
+/* 별 반짝임 애니메이션 */
+@keyframes twinkle-a {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  25%       { transform: scale(0.3); opacity: 0.2; }
+  55%       { transform: scale(1.2); opacity: 1; }
+  80%       { transform: scale(0.6); opacity: 0.5; }
+}
+@keyframes twinkle-b {
+  0%, 100% { transform: scale(0.7); opacity: 0.6; }
+  30%       { transform: scale(1.3); opacity: 1; }
+  60%       { transform: scale(0.4); opacity: 0.3; }
+}
+@keyframes twinkle-c {
+  0%, 100% { transform: scale(1.1); opacity: 1; }
+  20%       { transform: scale(0.5); opacity: 0.4; }
+  50%       { transform: scale(0.85); opacity: 0.7; }
+  75%       { transform: scale(1.25); opacity: 0.9; }
+}
+/* twinkle 클래스는 style 인라인으로 처리 — keyframes만 유지 */
+
