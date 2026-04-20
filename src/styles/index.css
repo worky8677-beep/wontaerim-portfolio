@@ -30,6 +30,27 @@
   box-sizing: border-box;
 }
 
+html, body, * {
+  cursor: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--color-silver) 10%, transparent);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-lime);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fern);
+  background-clip: content-box;
+}
+
 html {
   scroll-behavior: smooth;
 }

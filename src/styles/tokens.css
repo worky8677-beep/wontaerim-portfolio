@@ -1,4 +1,7 @@
 @theme {
+  /* 브레이크포인트 */
+  --breakpoint-xs: 30rem; /* 480px */
+
   /* 폰트 */
   --font-sans: "PretendardStd", "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-paperlogy: "Paperlogy", sans-serif;
@@ -25,6 +28,8 @@
   --color-cream: #FFFEBA;
   --color-chartreuse: #f2ffaf;
   --color-mint: #dfffab;
+  --color-skill-track: #e5e7eb;
+  --color-skill-fill: #93c5fd;
 
   /* 텍스트 크기 */
   --text-huge: 120px;
@@ -54,6 +59,8 @@
 
   /* 애니메이션 — OtherSection 페이지 슬라이드 전환 */
   --animate-slide-from-right: slide-from-right 0.4s ease both;
+  /* 애니메이션 — 커서 별 회전 */
+  --animate-spin-slow: spin 3s linear infinite;
 
   /* line-height 독립 토큰 */
   --leading-2: 20px;

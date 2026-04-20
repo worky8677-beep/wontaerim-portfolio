@@ -150,7 +150,7 @@ export default function HeroSection() {
 
             {/* 버튼 */}
             <div className="flex flex-row gap-3 items-center desktop:gap-5">
-              <LinkButton icon={faGithub} href="https://github.com/worky8677-beep" target="_blank" rel="noreferrer" className="justify-center w-[130px] desktop:w-auto">
+              <LinkButton icon={faGithub} href="https://github.com/worky8677-beep" target="_blank" rel="noreferrer" className="justify-center w-[130px] desktop:w-auto" starCursor>
                 깃허브 보기
               </LinkButton>
               <LinkButton icon={faFileLines} href={resumePdf} target="_blank" rel="noreferrer" className="justify-center w-[130px] desktop:w-auto">

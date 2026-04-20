@@ -38,7 +38,7 @@ export function SkillCircle({ name, percent = 70, triggered = false }) {
             cy="75"
             r={r}
             fill="none"
-            stroke="#e5e7eb"
+            stroke="var(--color-skill-track)"
             strokeWidth="10"
           />
           <circle
@@ -47,7 +47,7 @@ export function SkillCircle({ name, percent = 70, triggered = false }) {
             cy="75"
             r={r}
             fill="none"
-            stroke="#93c5fd"
+            stroke="var(--color-skill-fill)"
             strokeWidth="10"
             strokeDasharray={circumference}
             strokeDashoffset={circumference}

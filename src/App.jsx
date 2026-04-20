@@ -3,6 +3,8 @@ import { Outlet } from "react-router";
 import Lenis from "lenis";
 import { Nav } from "./components/common/Nav";
 import { Footer } from "./components/common/Footer";
+import { ScrollToTop } from "./components/common/ScrollToTop";
+import CustomCursor from "./components/common/CustomCursor";
 
 export default function App() {
   useEffect(() => {
@@ -25,6 +27,8 @@ export default function App() {
         <Outlet />
       </main>
       <Footer />
+      <ScrollToTop />
+      <CustomCursor />
     </>
   );
 }

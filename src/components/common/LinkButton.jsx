@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export function LinkButton({ icon, href, children, target, rel, className = "" }) {
+export function LinkButton({ icon, href, children, target, rel, className = "", starCursor = false }) {
   return (
     <a
       href={href}
       target={target}
       rel={rel}
+      data-star-cursor={starCursor ? "" : undefined}
       className={`group relative flex items-center gap-2 desktop:gap-3 px-4 py-2 desktop:px-8 desktop:py-4 rounded-full border border-lime bg-white overflow-hidden shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)] font-a2z text-xs desktop:text-body2 text-dove leading-none ${className}`}
     >
       {/* 물결이 아래에서 차오르는 liquid 레이어 */}
@@ -22,7 +23,7 @@ export function LinkButton({ icon, href, children, target, rel, className = "" }
           style={{ width: "200%" }}
         >
           <path
-            fill="#d7f0ac"
+            fill="var(--color-lime)"
             d="M0,10 C25,0 75,20 100,10 C125,0 175,20 200,10 C225,0 275,20 300,10 C325,0 375,20 400,10 V20 H0 Z"
           />
         </svg>
