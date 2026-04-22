@@ -10,7 +10,7 @@ import ogqBlueDetailImg from "../img/ogq/blue-detalis.png";
 export const ogqItems = [
   {
     id: 18,
-    category: "OGQ",
+    category: "Artwork",
     title: "네이버 OGQ 스티커\n체리빛 오브제",
     aspect: "square",
     image: ogqRedImg,
@@ -22,7 +22,7 @@ export const ogqItems = [
   },
   {
     id: 19,
-    category: "OGQ",
+    category: "Artwork",
     title: "네이버 OGQ 스티커\n노랑 오브제",
     aspect: "square",
     image: ogqYellowImg,
@@ -34,7 +34,7 @@ export const ogqItems = [
   },
   {
     id: 17,
-    category: "OGQ",
+    category: "Artwork",
     title: "네이버 OGQ 스티커\n보라빛 오브제",
     aspect: "square",
     image: ogqPurpleImg,
@@ -46,7 +46,7 @@ export const ogqItems = [
   },
   {
     id: 16,
-    category: "OGQ",
+    category: "Artwork",
     title: "네이버 OGQ 스티커\n파란빛 오브제",
     aspect: "square",
     image: ogqBlueImg,

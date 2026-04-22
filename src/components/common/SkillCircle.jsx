@@ -30,9 +30,9 @@ export function SkillCircle({ name, percent = 70, triggered = false }) {
   }, [triggered, offset, percent]);
 
   return (
-    <div className="flex flex-col items-center gap-3 w-[150px]">
-      <div className="relative size-[150px]">
-        <svg width="150" height="150" viewBox="0 0 150 150">
+    <div className="flex flex-col items-center gap-3 w-[80px] sm:w-[110px] md:w-[130px] lg:w-[150px]">
+      <div className="relative size-[80px] sm:size-[110px] md:size-[130px] lg:size-[150px]">
+        <svg width="100%" height="100%" viewBox="0 0 150 150">
           <circle
             cx="75"
             cy="75"
@@ -59,7 +59,7 @@ export function SkillCircle({ name, percent = 70, triggered = false }) {
           {count}%
         </span>
       </div>
-      <span className="font-a2z text-body3 text-dove text-center">
+      <span className="font-a2z text-[10px] sm:text-xs md:text-body3 text-dove text-center">
         {name}
       </span>
     </div>

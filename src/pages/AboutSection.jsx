@@ -5,7 +5,7 @@ import { useGsapReveal } from "../hooks/useGsapReveal";
 function InfoRow({ label, value }) {
   const chars = label.split("");
   return (
-    <div className="flex items-center gap-2 font-sans text-body2 text-dove tracking-[0.5px]">
+    <div className="flex items-center gap-2 font-sans text-body3 sm:text-body2 text-dove tracking-[0.5px]">
       {/* 글자마다 균등 배치 */}
       <span className="inline-flex justify-between w-[88px] shrink-0">
         {chars.map((c, i) => (
@@ -50,26 +50,26 @@ export default function AboutSection() {
             <HeadTitle title="About me" />
             {/* 이름 */}
             <div className="flex gap-3 items-baseline">
-              <span className="font-a2z font-semibold text-h3 text-charcoal">
+              <span className="font-a2z font-semibold text-h5 sm:text-h3 text-charcoal">
                 원태림
               </span>
-              <span className="font-a2z font-semibold text-h4 text-charcoal">
+              <span className="font-a2z font-semibold text-body2 sm:text-h4 text-charcoal">
                 Won Tae Rim
               </span>
             </div>
             {/* 상세 정보 */}
-            <div className="flex flex-col gap-4 md:grid md:grid-flow-col md:grid-rows-2 md:gap-x-[90px] md:gap-y-4 lg:flex lg:flex-col lg:gap-4">
+            <div className="flex flex-col gap-2 sm:gap-4 md:grid md:grid-flow-col md:grid-rows-2 md:gap-x-[90px] md:gap-y-4 lg:flex lg:flex-col lg:gap-4">
               <InfoRow label="전화번호" value="010-2256-7019" />
               <InfoRow label="이메일" value="trw9701@gmail.com" />
               <InfoRow label="거주" value="서울시 은평구" />
               <InfoRow label="생년월일" value="1997.01.17" />
             </div>
             {/* 소개 텍스트 */}
-            <div className="font-sans text-sub text-charcoal leading-[42px]">
+            <div className="font-sans text-label sm:text-sub text-charcoal leading-[36px] sm:leading-[42px]">
               <p>
                 음악을 만들고, 영상을 찍고, 무대를 기획했습니다. 무엇을 해도
-                <br className="hidden lg:inline" /> &quot;어떻게 하면
-                더 잘 전달될까&quot;를 고민해온 사람입니다. 그 질문이 저를 UI/UX
+                <br className="hidden lg:inline" /> &quot;어떻게 하면 더 잘
+                전달될까&quot;를 고민해온 사람입니다. 그 질문이 저를 UI/UX
                 디자인으로 데려왔습니다. 배움과 만드는 일을 멈춘 적이 없습니다.{" "}
                 좋은 경험을 만드는 디자이너로 계속 나아가겠습니다.
               </p>

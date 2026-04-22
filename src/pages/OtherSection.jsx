@@ -11,7 +11,7 @@ import { ogqItems } from "../data/OgqItems.jsx";
 
 const others = [...musicItems, ...youtubeItems, ...ogqItems];
 
-const tabs = ["All", "Music", "YouTube", "OGQ"];
+const tabs = ["All", "Music", "YouTube", "Artwork"];
 
 function chunkArray(arr, size) {
   const result = [];
@@ -37,7 +37,7 @@ export default function OtherSection() {
   const hasNext = isPaged && page < totalPages - 1;
 
   function handleCardClick(item) {
-    if (item.category !== "Music" && item.category !== "OGQ") return;
+    if (item.category !== "Music" && item.category !== "Artwork") return;
     setSelected((prev) => (prev?.id === item.id ? null : item));
   }
 
@@ -114,7 +114,7 @@ export default function OtherSection() {
             <div
               className={`w-full lg:w-[584px] h-full transition-transform duration-500 ease-in-out p-2 ${selected ? "translate-x-0" : "translate-x-full"}`}
             >
-              {selected?.category === "OGQ" ? (
+              {selected?.category === "Artwork" ? (
                 <OGQDescCard
                   item={selected}
                   onClose={() => setSelected(null)}

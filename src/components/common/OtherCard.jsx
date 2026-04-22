@@ -1,5 +1,5 @@
 export function OtherCard({ image, title, desc, isSelected, onClick, category, aspect }) {
-  const isOGQ = category === "OGQ";
+  const isOGQ = category === "Artwork";
   const isVideo = aspect === "video";
   return (
     <div

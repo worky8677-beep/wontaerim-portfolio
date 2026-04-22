@@ -78,7 +78,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <header className="relative w-full h-screen desktop:h-[80vh] bg-white overflow-hidden">
+    <header className="relative w-full h-screen desktop:h-[80vh] max-[480px]:h-auto bg-white overflow-hidden">
       {/* Fiveline 장식 — 데스크탑만 */}
       <div className="hidden desktop:block absolute left-[-83px] top-[200px] rotate-180 -scale-y-100 pointer-events-none z-0">
         <Fiveline />
@@ -125,10 +125,10 @@ export default function HeroSection() {
       </div>
 
       {/* 메인 콘텐츠 — 중앙 집중형 */}
-      <div className="relative z-10 w-full h-screen desktop:h-[80vh] leading-none tracking-tighter flex items-center justify-center">
-        <div className="grid grid-cols-1 content-start desktop:flex desktop:flex-row place-items-center items-center justify-center gap-6 w-full max-w-[1100px] h-full px-8">
+      <div className="relative z-10 w-full h-screen desktop:h-[80vh] max-[480px]:h-auto max-[480px]:pt-8 max-[480px]:pb-24 leading-none tracking-tighter flex items-center justify-center">
+        <div className="grid grid-cols-1 content-start desktop:flex desktop:flex-row place-items-center items-center justify-center gap-6 w-full max-w-[1100px] h-full px-8 max-[480px]:flex max-[480px]:flex-col max-[480px]:h-auto">
           {/* 텍스트 영역 */}
-          <div className="col-start-1 row-start-1 desktop:col-start-auto desktop:row-start-auto flex flex-col items-center text-center desktop:items-start desktop:text-left gap-8 z-20 desktop:gap-20 shrink-0 whitespace-nowrap">
+          <div className="col-start-1 row-start-1 desktop:col-start-auto desktop:row-start-auto max-[480px]:col-start-auto max-[480px]:row-start-auto max-[480px]:order-2 flex flex-col items-center text-center desktop:items-start desktop:text-left gap-8 z-20 desktop:gap-20 shrink-0 whitespace-nowrap">
             <div>
               <div className="overflow-hidden pt-3 -mt-3">
                 <p ref={subtitleRef} className="font-paperlogy font-thin text-sub mb-4 desktop:text-display text-dove leading-none h-fit">
@@ -160,7 +160,7 @@ export default function HeroSection() {
           </div>
 
           {/* 사진 영역 */}
-          <div className="col-start-1 row-start-1 desktop:col-start-auto desktop:row-start-auto desktop:flex-1 h-full flex items-center justify-center desktop:justify-start z-10 min-w-0">
+          <div className="col-start-1 row-start-1 desktop:col-start-auto desktop:row-start-auto max-[480px]:col-start-auto max-[480px]:row-start-auto max-[480px]:order-1 desktop:flex-1 h-full max-[480px]:h-auto flex items-center justify-center desktop:justify-start z-10 min-w-0">
             <img src={taerimPhoto} alt="원태림" className="w-[80vw] h-auto object-contain desktop:w-auto desktop:h-full desktop:max-w-none desktop:object-left" />
           </div>
         </div>
