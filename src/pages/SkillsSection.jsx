@@ -31,7 +31,8 @@ export default function SkillsSection() {
     >
       <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-[60px] md:gap-[111px] px-6 md:px-10">
         <HeadTitle title="Skills" />
-        <div className="flex flex-col gap-[24px] sm:gap-[40px] md:gap-[90px]">
+        {/* 원형 — 481px 이상 */}
+        <div className="hidden sm:flex flex-col gap-[24px] sm:gap-[40px] md:gap-[90px]">
           <div className="flex justify-between">
             {skills.slice(0, 5).map((skill, i) => (
               <SkillCircle key={i} triggered={triggered} {...skill} />
@@ -42,6 +43,24 @@ export default function SkillsSection() {
               <SkillCircle key={i} triggered={triggered} {...skill} />
             ))}
           </div>
+        </div>
+
+        {/* 막대형 — 480px 이하 */}
+        <div className="flex flex-col gap-5 sm:hidden">
+          {skills.map((skill, i) => (
+            <div key={i} className="flex flex-col gap-1">
+              <div className="flex justify-between font-a2z text-xs text-dove">
+                <span>{skill.name}</span>
+                <span>{triggered ? skill.percent : 0}%</span>
+              </div>
+              <div className="w-full h-2 rounded-full bg-snowflake overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-fern/70 transition-all duration-[1200ms] ease-[power2.inOut]"
+                  style={{ width: triggered ? `${skill.percent}%` : "0%" }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
