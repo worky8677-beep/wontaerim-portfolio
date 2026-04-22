@@ -11,8 +11,6 @@ export default function CustomCursor() {
   const [onButton, setOnButton] = useState(false);
 
   useEffect(() => {
-    document.body.style.cursor = "none";
-
     function onMove(e) {
       mouse.current = { x: e.clientX, y: e.clientY };
     }
