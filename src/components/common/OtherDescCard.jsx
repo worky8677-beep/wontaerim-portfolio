@@ -28,7 +28,27 @@ export function OtherDescCard({ item, onClose }) {
           value={item.albumType && `${item.albumType}${item.trackCount ? ` / ${item.trackCount}곡` : ""}`}
         />
         <InfoRow label="타입" value={item.type} />
-        <InfoRow label="지원기관" value={item.support} />
+        {/* 지원기관 — "지원사업선정" 부분만 작게 */}
+        <div className="flex flex-col gap-1">
+          <span className="font-a2z text-body3 text-dove">지원기관</span>
+          <span className="font-a2z text-body2 lg:text-sub font-semibold text-charcoal">
+            {item.support?.replace(" 지원사업선정", "")}
+            {item.support?.includes("지원사업선정") && (
+              <span className="text-xs font-normal text-dove ml-1 relative">
+                <span className="absolute inset-0 bg-cream/40 rounded-sm -mx-0.5" />
+                <span className="relative">지원사업선정</span>
+              </span>
+            )}
+          </span>
+        </div>
+        {item.participation && (
+          <div className="col-span-2 flex flex-col gap-1">
+            <span className="font-a2z text-body3 text-dove">참여</span>
+            <span className="font-a2z text-body3 font-semibold text-charcoal">
+              {item.participation}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* 설명 */}

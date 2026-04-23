@@ -31,7 +31,7 @@ export default function AboutSection() {
         {/* 사진 — 모바일/태블릿: 전체 너비, 데스크탑: 고정 너비 */}
         <div
           ref={leftRef}
-          className="relative w-[260px] h-[360px] mx-auto md:w-[340px] md:h-[460px] md:mx-auto lg:w-[400px] lg:h-full lg:mx-0 lg:shrink-0 overflow-hidden"
+          className="relative w-[260px] h-[360px] mx-auto md:w-[340px] md:h-[460px] md:mx-auto lg:w-[400px] lg:mt-10 lg:h-full lg:mx-0 lg:shrink-0 overflow-hidden"
         >
           <img
             src={subprofile}
@@ -44,9 +44,9 @@ export default function AboutSection() {
         {/* 콘텐츠 */}
         <div
           ref={rightRef}
-          className="flex flex-col gap-10 flex-1 bg-white rounded-[24px] px-6 py-6 desktop:px-10 desktop:py-10"
+          className="flex flex-col gap-8 flex-1 bg-white rounded-[24px] px-6 py-6 desktop:px-10 desktop:py-10"
         >
-          <div className="flex flex-col gap-8 desktop:gap-10">
+          <div className="flex flex-col gap-9 desktop:gap-8">
             <HeadTitle title="About me" />
             {/* 이름 */}
             <div className="flex gap-3 items-baseline">
@@ -58,7 +58,7 @@ export default function AboutSection() {
               </span>
             </div>
             {/* 상세 정보 */}
-            <div className="flex flex-col gap-2 sm:gap-4 md:grid md:grid-flow-col md:grid-rows-2 md:gap-x-[90px] md:gap-y-4 lg:flex lg:flex-col lg:gap-4">
+            <div className="flex flex-col gap-2 sm:gap-4 md:grid md:grid-flow-col md:grid-rows-2 md:gap-x-[90px] md:gap-y-4 lg:flex lg:flex-col lg:gap-2">
               <InfoRow label="전화번호" value="010-2256-7019" />
               <InfoRow label="이메일" value="trw9701@gmail.com" />
               <InfoRow label="거주" value="서울시 은평구" />

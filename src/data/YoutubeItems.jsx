@@ -4,27 +4,27 @@ import obihiroImg from "../img/youtube/obihiro.jpg";
 
 export const youtubeItems = [
   {
-    id: 12,
-    category: "YouTube",
-    title: "도쿠시마 여행",
+    id: 14,
+    category: "Video",
+    title: "항공사:에어로케이 협찬 영상제작",
     aspect: "video",
-    image: dokushimaImg,
+    image: obihiroImg,
     href: null,
   },
   {
     id: 13,
-    category: "YouTube",
-    title: "마쓰야마 여행후기",
+    category: "Video",
+    title: "정보성 영상기획, 편집",
     aspect: "video",
     image: mastuyamaImg,
     href: null,
   },
   {
-    id: 14,
-    category: "YouTube",
-    title: "오비히로 with 에어로케이",
+    id: 12,
+    category: "Video",
+    title: "여행 브이로그 편집",
     aspect: "video",
-    image: obihiroImg,
+    image: dokushimaImg,
     href: null,
   },
 ];

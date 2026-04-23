@@ -11,7 +11,7 @@ import { ogqItems } from "../data/OgqItems.jsx";
 
 const others = [...musicItems, ...youtubeItems, ...ogqItems];
 
-const tabs = ["All", "Music", "YouTube", "Artwork"];
+const tabs = ["All", "Music", "Video", "Artwork"];
 
 function chunkArray(arr, size) {
   const result = [];
@@ -87,7 +87,7 @@ export default function OtherSection() {
                 {pages.map((pageItems, i) => (
                   <div
                     key={`${i}-${active}-${!!selected}`}
-                    className={`min-w-full grid gap-4 desktop:gap-6 content-start animate-slide-from-right ${selected ? "grid-cols-2" : active === "YouTube" ? "grid-cols-3" : "grid-cols-4"}`}
+                    className={`min-w-full grid gap-4 desktop:gap-6 content-start animate-slide-from-right ${selected ? "grid-cols-2" : active === "Video" ? "grid-cols-3" : "grid-cols-4"}`}
                   >
                     {pageItems.map((item) => (
                       <OtherCard
