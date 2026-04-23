@@ -25,7 +25,6 @@ export function useGsapReveal(direction = "up", { duration = 0.8 } = {}) {
         ...fromMap[direction],
         duration,
         ease: "power2.out",
-        immediateRender: false,
         scrollTrigger: {
           trigger: el,
           start,
