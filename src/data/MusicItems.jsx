@@ -24,7 +24,7 @@ export const musicItems = [
     trackCount: 1,
     participation: "작사, 작곡, 편곡, 앨범커버 제작",
     description: "",
-    href: null,
+    href: "https://youtu.be/b6PKukaCSC8?si=FEhlGChsQV8QVAKa",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ export const musicItems = [
     trackCount: 1,
     participation: "작사, 작곡",
     description: "",
-    href: null,
+    href: "https://youtu.be/iIvjQdGyzaw?si=LhWMS8l-K5uE1UGH",
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ export const musicItems = [
     trackCount: 1,
     participation: "작사, 작곡",
     description: "",
-    href: null,
+    href: "https://youtu.be/usEg_Y9Wm2o?si=ujZkWjiJw_u7N0Tr",
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ export const musicItems = [
     trackCount: 5,
     participation: "작사, 작/편곡, 유통사 섭외, 앨범커버/가사지/실물CD 제작",
     description: "",
-    href: null,
+    href: "https://youtu.be/z4iYkfti-Hs?si=Nnzxxx0nYL1KfoGe",
   },
   {
     id: 6,
@@ -84,7 +84,7 @@ export const musicItems = [
     trackCount: 4,
     participation: "작사, 작곡, 프로듀싱, 앨범커버 제작, 유통사 섭외",
     description: "",
-    href: null,
+    href: "https://youtu.be/Fe3umwaTK-o?si=kUi3fW3F1HTQjowE",
   },
   {
     id: 7,
@@ -99,7 +99,7 @@ export const musicItems = [
     trackCount: 7,
     participation: "작/편곡 참여",
     description: "",
-    href: null,
+    href: "https://youtu.be/4pe29grfTVk?si=d1V2Zyt4vLgq9Cto",
   },
   {
     id: 9,
@@ -114,7 +114,7 @@ export const musicItems = [
     trackCount: 3,
     participation: "작사, 작/편곡, 프로듀싱, 유통사 섭외",
     description: "",
-    href: null,
+    href: "https://youtu.be/5qIs55qg7Jw?si=uN2rOuNJHSM8e72p",
   },
   {
     id: 10,
@@ -129,7 +129,7 @@ export const musicItems = [
     trackCount: 2,
     participation: "작사, 작/편곡",
     description: "",
-    href: null,
+    href: "https://youtu.be/LgBvaHnGyqs?si=TZPtQynx-qV9wnNb",
   },
   {
     id: 11,
@@ -144,7 +144,7 @@ export const musicItems = [
     trackCount: 1,
     participation: "작사, 작/편곡, 유통사 섭외",
     description: "",
-    href: null,
+    href: "https://youtu.be/WCCVQ9wfuAM?si=jvkJ_QspTx3EOqoU",
   },
   {
     id: 2,
@@ -159,7 +159,7 @@ export const musicItems = [
     trackCount: 1,
     participation: "보컬 참여",
     description: "",
-    href: null,
+    href: "https://youtu.be/jGdkOlyjwZU?si=WVDXMrzM-EvsGrnr",
   },
   {
     id: 8,
@@ -174,6 +174,6 @@ export const musicItems = [
     trackCount: 1,
     participation: "보컬 참여",
     description: "",
-    href: null,
+    href: "https://youtu.be/v7GPf34NuAc?si=VCX2WZSjYN-RAIEc",
   },
 ];

@@ -7,6 +7,6 @@ export const skills = [
   { name: "Photoshop", percent: 90 },
   { name: "Illustrator", percent: 80 },
   { name: "Premier pro", percent: 90 },
-  { name: "After Effect", percent: 80 },
+  { name: "Capcut", percent: 80 },
   { name: "Notion", percent: 90 },
 ];

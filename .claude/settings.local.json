@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(npm run *)",
-      "mcp__claude_ai_Figma__get_design_context"
+      "mcp__claude_ai_Figma__get_design_context",
+      "Bash(mv /Users/wontaelim/Desktop/portfolio/src/data/EduExItems.js /Users/wontaelim/Desktop/portfolio/src/data/EduExItems.jsx)",
+      "Bash(mv /Users/wontaelim/Desktop/portfolio/src/data/SkillItems.js /Users/wontaelim/Desktop/portfolio/src/data/SkillItems.jsx)",
+      "Bash(mv /Users/wontaelim/Desktop/portfolio/src/hooks/useGsapReveal.js /Users/wontaelim/Desktop/portfolio/src/hooks/useGsapReveal.jsx)"
     ]
   }
 }

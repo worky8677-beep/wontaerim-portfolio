@@ -60,14 +60,16 @@ export function OtherDescCard({ item, onClose }) {
 
       {/* 링크 */}
       {item.href && (
-        <a
-          href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="self-start font-a2z text-sm font-bold text-forest hover:underline transition-colors mt-auto"
-        >
-          스트리밍 바로가기 →
-        </a>
+        <div className="mt-auto flex justify-end">
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-a2z text-sm font-bold text-snowflake bg-forest px-5 py-2.5 rounded-full border border-transparent hover:bg-white hover:text-forest hover:border-forest transition-colors"
+          >
+            스트리밍 바로가기 →
+          </a>
+        </div>
       )}
     </div>
   );

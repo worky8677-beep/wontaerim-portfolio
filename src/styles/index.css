@@ -158,6 +158,15 @@ body {
   background-size: 100% 100%;
 }
 
+/* 마퀴 무한 스크롤 */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 22s linear infinite;
+}
+
 /* 별 반짝임 애니메이션 */
 @keyframes twinkle-a {
   0%, 100% { transform: scale(1); opacity: 0.8; }
