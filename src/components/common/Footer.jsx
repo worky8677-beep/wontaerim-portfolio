@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useGsapReveal } from "../../hooks/useGsapReveal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileLines, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -53,6 +53,23 @@ const arcText = Array(10).fill(
 
 export function Footer() {
   const contentRef = useGsapReveal("left");
+  const svgRef = useRef(null);
+  const pathRef = useRef(null);
+
+  useEffect(() => {
+    function update() {
+      if (!svgRef.current || !pathRef.current) return;
+      const w = svgRef.current.getBoundingClientRect().width;
+      const vw = window.innerWidth;
+      const fontSize = vw < 768 ? 14 : vw < 1024 ? 20 : 30;
+      svgRef.current.setAttribute("viewBox", `0 0 ${w} ${DOME_H + TEXT_PAD}`);
+      pathRef.current.setAttribute("d", `M 0,${DOME_H} A ${w / 2},${DOME_H} 0 0,1 ${w},${DOME_H}`);
+      svgRef.current.querySelector("text").setAttribute("fontSize", fontSize);
+    }
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   return (
     <footer id="contact" className="relative bg-white overflow-hidden">
@@ -71,6 +88,7 @@ export function Footer() {
 
       {/* 아치형 마퀴 텍스트 — 돔과 같은 너비/위치로 맞춤 */}
       <svg
+        ref={svgRef}
         xmlns="http://www.w3.org/2000/svg"
         className="absolute top-0 pointer-events-none select-none z-20"
         height={DOME_H + TEXT_PAD}
@@ -81,6 +99,7 @@ export function Footer() {
       >
         <defs>
           <path
+            ref={pathRef}
             id="dome-arc"
             d={`M 0,${DOME_H} A ${EXT_W / 2},${DOME_H} 0 0,1 ${EXT_W},${DOME_H}`}
           />
