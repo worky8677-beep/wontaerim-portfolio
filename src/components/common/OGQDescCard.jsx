@@ -7,16 +7,26 @@ export function OGQDescCard({ item, onClose }) {
 
   return (
     <div className="group w-full h-full rounded-[24px] overflow-hidden relative border border-gallery/30">
-      {/* 스크롤 이미지 */}
+      {/* 이미지 */}
       {item.detailImage ? (
-        <div className="w-full translate-y-0 group-hover:-translate-y-[calc(100%-560px)] transition-transform duration-[2500ms] ease-in-out">
-          <img
-            src={item.detailImage}
-            alt={item.title}
-            className="w-full h-auto"
-          />
-          <div className="w-full h-[220px] bg-white" />
-        </div>
+        item.detailEffect === "zoom" ? (
+          <div className="w-full h-full overflow-hidden">
+            <img
+              src={item.detailImage}
+              alt={item.title}
+              className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-in-out"
+            />
+          </div>
+        ) : (
+          <div className="w-full translate-y-0 group-hover:-translate-y-[calc(100%-560px)] transition-transform duration-[2500ms] ease-in-out">
+            <img
+              src={item.detailImage}
+              alt={item.title}
+              className="w-full h-auto"
+            />
+            <div className="w-full h-[220px] bg-white" />
+          </div>
+        )
       ) : (
         <div className="w-full h-full bg-alabaster" />
       )}

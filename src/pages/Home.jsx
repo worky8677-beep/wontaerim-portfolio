@@ -6,6 +6,7 @@ const EduExSection = lazy(() => import("./EduExSection"));
 const ProjectsSection = lazy(() => import("./ProjectsSection"));
 const OtherSection = lazy(() => import("./OtherSection"));
 const SkillsSection = lazy(() => import("./SkillsSection"));
+const QuoteSection = lazy(() => import("./QuoteSection"));
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <EduExSection />
         <ProjectsSection />
         <OtherSection />
+        <QuoteSection />
         <SkillsSection />
       </Suspense>
     </>

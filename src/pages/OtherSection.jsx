@@ -11,6 +11,11 @@ import { ogqItems } from "../data/OgqItems.jsx";
 
 const others = [...musicItems, ...youtubeItems, ...ogqItems];
 
+const allById = Object.fromEntries(others.map((o) => [o.id, o]));
+const orderedAll = [1, 5, 20, 17, 14, 3, 12, 21, 18, 4, 13, 19, 6, 16, 9, 7, 10, 2, 11, 8]
+  .map((id) => allById[id])
+  .filter(Boolean);
+
 const tabs = ["All", "Music", "Video", "Artwork"];
 
 function chunkArray(arr, size) {
@@ -25,10 +30,10 @@ export default function OtherSection() {
   const [page, setPage] = useState(0);
   const [selected, setSelected] = useState(null);
 
-  const isPaged = active === "All" || active === "Music";
+  const isPaged = active === "All" || active === "Music" || !!selected;
   const effectiveSize = selected ? 4 : 8;
   const sourceItems =
-    active === "All" ? others : others.filter((o) => o.category === active);
+    active === "All" ? orderedAll : others.filter((o) => o.category === active);
   const pages = isPaged
     ? chunkArray(sourceItems, effectiveSize)
     : [sourceItems];
@@ -38,7 +43,11 @@ export default function OtherSection() {
 
   function handleCardClick(item) {
     if (item.category !== "Music" && item.category !== "Artwork") return;
-    setSelected((prev) => (prev?.id === item.id ? null : item));
+    setSelected((prev) => {
+      if (prev?.id === item.id) return null;
+      setPage(0);
+      return item;
+    });
   }
 
   function handleTab(tab) {
@@ -95,6 +104,7 @@ export default function OtherSection() {
                         {...item}
                         isSelected={selected?.id === item.id}
                         onClick={() => handleCardClick(item)}
+                        forceSquare={active === "All"}
                       />
                     ))}
                   </div>

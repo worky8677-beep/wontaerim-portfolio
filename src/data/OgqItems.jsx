@@ -1,3 +1,5 @@
+import ogqTapeImg from "../img/ogq/mockup-tape.png";
+import ogqTicketImg from "../img/ogq/mockup-ticket.png";
 import ogqRedImg from "../img/ogq/red.png";
 import ogqYellowImg from "../img/ogq/yellow.PNG";
 import ogqPurpleImg from "../img/ogq/purple.PNG";
@@ -8,6 +10,32 @@ import ogqPurpleDetailImg from "../img/ogq/purple-detalis.png";
 import ogqBlueDetailImg from "../img/ogq/blue-detalis.png";
 
 export const ogqItems = [
+  {
+    id: 20,
+    category: "Artwork",
+    title: "제과점 마스킹테이프 디자인",
+    aspect: "square",
+    image: ogqTapeImg,
+    detailImage: ogqTapeImg,
+    detailEffect: "zoom",
+    releaseDate: "",
+    program: "프로크리에이트",
+    description: "",
+    href: null,
+  },
+  {
+    id: 21,
+    category: "Artwork",
+    title: "제과점 이벤트티켓 디자인",
+    aspect: "square",
+    image: ogqTicketImg,
+    detailImage: ogqTicketImg,
+    detailEffect: "zoom",
+    releaseDate: "",
+    program: "프로크리에이트",
+    description: "",
+    href: null,
+  },
   {
     id: 18,
     category: "Artwork",

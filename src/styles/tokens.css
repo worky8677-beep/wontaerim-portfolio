@@ -7,6 +7,7 @@
   --font-paperlogy: "Paperlogy", sans-serif;
   --font-a2z: "A2Z", sans-serif;
   --font-orelega: "Orelega One", serif;
+  --font-instrument: "Instrument Serif", serif;
 
   /* 색상 */
   --color-lime: #d7f0ac;
@@ -30,6 +31,16 @@
   --color-mint: #dfffab;
   --color-skill-track: #e5e7eb;
   --color-skill-fill: #93c5fd;
+  --color-night: #1a1a1a;
+  --color-carbon: #2d2d2d;
+  --color-dev: #2563eb;
+  --color-dev-light: #dbeafe;
+  --color-design: #10b981;
+  --color-design-light: #d1fae5;
+  --color-video: #ea580c;
+  --color-video-light: #ffedd5;
+  --color-collab: #8b5cf6;
+  --color-collab-light: #ede9fe;
 
   /* 텍스트 크기 */
   --text-huge: 120px;

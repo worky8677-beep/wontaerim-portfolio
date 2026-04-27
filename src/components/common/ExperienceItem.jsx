@@ -24,7 +24,7 @@ export function ExperienceItem({ start, end, title, description }) {
           {title}
         </p>
         {description && (
-          <p className="font-a2z font-light text-[12px] sm:text-body3 text-dove leading-3 sm:leading-6">
+          <p className="font-a2z font-light text-[12px] sm:text-body3 text-dove leading-3 sm:leading-6 whitespace-pre-line">
             {description}
           </p>
         )}
