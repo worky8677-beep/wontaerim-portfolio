@@ -54,7 +54,7 @@ export default function QuoteSection() {
 
       {/* 텍스트 */}
       <p className="relative z-10 font-instrument text-h4 md:text-h3 text-dove italic text-center px-6">
-        Always learning, always growing !
+        Always learning, Always growing !
       </p>
     </section>
   );

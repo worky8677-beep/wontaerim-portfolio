@@ -31,14 +31,35 @@ export default function AboutSection() {
         {/* 사진 — 모바일/태블릿: 전체 너비, 데스크탑: 고정 너비 */}
         <div
           ref={leftRef}
-          className="relative w-[260px] h-[360px] mx-auto md:w-[340px] md:h-[460px] md:mx-auto lg:w-[400px] lg:mt-10 lg:h-full lg:mx-0 lg:shrink-0 overflow-hidden"
+          className="relative w-[260px] h-[360px] mx-auto md:w-[340px] md:h-[460px] md:mx-auto lg:w-[400px] lg:mt-10 lg:h-full lg:mx-0 lg:shrink-0"
         >
-          <img
-            src={subprofile}
-            alt="원태림"
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute bottom-0 left-0 w-full h-5 bg-linear-[to_bottom] from-transparent to-white pointer-events-none" />
+          {/* 이미지 + 하단 그라디언트 */}
+          <div className="relative w-full h-full overflow-hidden">
+            <img
+              src={subprofile}
+              alt="원태림"
+              className="w-full h-full object-cover object-top"
+            />
+            <div className="absolute bottom-0 left-0 w-full h-5 bg-linear-[to_bottom] from-transparent to-white pointer-events-none" />
+          </div>
+
+          {/* 떠다니는 칩 — 바깥 div: 위치+각도, 안쪽 div: 애니메이션 */}
+          {/* 👇 top-* right-* 부분만 바꾸면 768 미만 위치 조절 */}
+          <div className="absolute top-8 right-1 md:top-8 md:right-10 -rotate-6">
+            <div className="chip-iridescent animate-float-1 backdrop-blur-md rounded-full px-2.5 py-1 text-xs xs:px-4 xs:py-2 xs:text-sm font-sans text-charcoal whitespace-nowrap">
+              #Figma
+            </div>
+          </div>
+          <div className="absolute top-50 left-1 md:top-50 md:left-3 rotate-3">
+            <div className="chip-iridescent animate-float-2 backdrop-blur-md rounded-full px-2.5 py-1 text-xs xs:px-4 xs:py-2 xs:text-sm font-sans text-charcoal whitespace-nowrap">
+              #UI/UX
+            </div>
+          </div>
+          <div className="absolute top-80 right-1 md:top-100 md:right-3 -rotate-2">
+            <div className="chip-iridescent animate-float-3 backdrop-blur-md rounded-full px-2.5 py-1 text-xs xs:px-4 xs:py-2 xs:text-sm font-sans text-charcoal whitespace-nowrap">
+              #Premiere Pro
+            </div>
+          </div>
         </div>
 
         {/* 콘텐츠 */}
@@ -71,7 +92,7 @@ export default function AboutSection() {
                 <br className="hidden lg:inline" /> &quot;어떻게 하면 더 잘
                 전달될까&quot;를 고민해온 사람입니다. 그 질문이 저를 UI/UX
                 디자인으로 데려왔습니다. 배움과 만드는 일을 멈춘 적이 없습니다.{" "}
-                좋은 경험을 만드는 디자이너로 계속 나아가겠습니다.
+                배우고 만들고 연결하며 좋은 경험을 만드는 디자이너가 되겠습니다.
               </p>
             </div>
           </div>

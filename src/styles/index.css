@@ -188,3 +188,12 @@ body {
 }
 /* twinkle 클래스는 style 인라인으로 처리 — keyframes만 유지 */
 
+/* 어바웃미 — 글래스모피즘 칩 */
+.chip-iridescent {
+  background: color-mix(in srgb, var(--color-lime) 20%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--color-lime) 50%, transparent);
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--color-fern) 10%, transparent);
+}
+

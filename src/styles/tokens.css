@@ -72,6 +72,10 @@
   --animate-slide-from-right: slide-from-right 0.4s ease both;
   /* 애니메이션 — 커서 별 회전 */
   --animate-spin-slow: spin 3s linear infinite;
+  /* 애니메이션 — 어바웃미 떠다니는 칩 */
+  --animate-float-1: float-chip1 3s ease-in-out infinite;
+  --animate-float-2: float-chip2 4s ease-in-out infinite;
+  --animate-float-3: float-chip3 3.5s ease-in-out infinite;
 
   /* line-height 독립 토큰 */
   --leading-2: 20px;
@@ -84,6 +88,19 @@
 @keyframes slide-from-right {
   from { opacity: 0; transform: translateX(32px); }
   to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float-chip1 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes float-chip2 {
+  0%, 100% { transform: translateY(-4px); }
+  50% { transform: translateY(4px); }
+}
+@keyframes float-chip3 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
 }
 
 /* 모바일(세로 비율): 본문 글자 최소 16px 보장 */
