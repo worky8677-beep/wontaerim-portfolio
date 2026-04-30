@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { HeadTitle } from "../components/common/HeadTitle";
 import { OtherCard } from "../components/common/OtherCard";
 import { SliderArrowButton } from "../components/common/SliderArrowButton";
 import { OtherDescCard } from "../components/common/OtherDescCard";
@@ -11,12 +10,12 @@ import { ogqItems } from "../data/OgqItems.jsx";
 
 const others = [...musicItems, ...youtubeItems, ...ogqItems];
 
-const allById = Object.fromEntries(others.map((o) => [o.id, o]));
-const orderedAll = [1, 5, 20, 17, 14, 3, 12, 21, 18, 4, 13, 19, 6, 16, 9, 7, 10, 2, 11, 8]
-  .map((id) => allById[id])
-  .filter(Boolean);
+const tabs = ["Visuals", "Music", "Artwork"];
 
-const tabs = ["All", "Music", "Video", "Artwork"];
+function getCategory(tab) {
+  if (tab === "Visuals") return "Video";
+  return tab;
+}
 
 function chunkArray(arr, size) {
   const result = [];
@@ -26,14 +25,13 @@ function chunkArray(arr, size) {
 }
 
 export default function OtherSection() {
-  const [active, setActive] = useState("All");
+  const [active, setActive] = useState("Visuals");
   const [page, setPage] = useState(0);
   const [selected, setSelected] = useState(null);
 
-  const isPaged = active === "All" || active === "Music" || !!selected;
+  const isPaged = active === "Music" || !!selected;
   const effectiveSize = selected ? 4 : 8;
-  const sourceItems =
-    active === "All" ? orderedAll : others.filter((o) => o.category === active);
+  const sourceItems = others.filter((o) => o.category === getCategory(active));
   const pages = isPaged
     ? chunkArray(sourceItems, effectiveSize)
     : [sourceItems];
@@ -59,18 +57,27 @@ export default function OtherSection() {
   return (
     <section id="other" className="w-full bg-white py-16 desktop:py-24">
       <div className="w-full max-w-[1280px] mx-auto px-6 desktop:px-10 flex flex-col gap-8 desktop:gap-[48px]">
-        <HeadTitle title="Creative Works" />
+        {/* 타이틀 */}
+        <div className="relative flex justify-center items-center h-[100px] desktop:h-[136px] overflow-hidden">
+          <div className="rotate-[-3.57deg]">
+            <div className="bg-lime flex items-center justify-center py-[10px] w-[280px] desktop:w-[573px]">
+              <p className="font-paperlogy font-bold text-[36px] desktop:text-[64px] text-dove tracking-[-1.6px] whitespace-nowrap leading-[50px] desktop:leading-[80px]">
+                Creative Works!
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* 탭 */}
-        <div className="flex gap-3">
+        <div className="flex w-full gap-3 desktop:gap-[20px]">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => handleTab(tab)}
-              className={`px-5 py-2 rounded-full text-sm font-a2z transition-colors duration-200 ${
+              className={`flex-1 py-2 desktop:py-[11px] rounded-full font-paperlogy font-Regular text-xs desktop:text-2xl border transition-colors duration-200 ${
                 active === tab
-                  ? "bg-forest text-white"
-                  : "bg-alabaster text-dove hover:bg-gallery"
+                  ? "bg-mine text-white border-mine"
+                  : "border-silver text-dove bg-transparent hover:border-gallery"
               }`}
             >
               {tab}
@@ -96,7 +103,7 @@ export default function OtherSection() {
                 {pages.map((pageItems, i) => (
                   <div
                     key={`${i}-${active}-${!!selected}`}
-                    className={`min-w-full grid gap-4 desktop:gap-6 content-start animate-slide-from-right ${selected ? "grid-cols-2" : active === "Video" ? "grid-cols-3" : "grid-cols-4"}`}
+                    className={`min-w-full grid gap-4 desktop:gap-6 content-start animate-slide-from-right ${selected ? "grid-cols-2" : active === "Visuals" ? "grid-cols-3" : "grid-cols-4"}`}
                   >
                     {pageItems.map((item) => (
                       <OtherCard
@@ -104,7 +111,6 @@ export default function OtherSection() {
                         {...item}
                         isSelected={selected?.id === item.id}
                         onClick={() => handleCardClick(item)}
-                        forceSquare={active === "All"}
                       />
                     ))}
                   </div>

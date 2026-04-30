@@ -31,6 +31,6 @@ export const skillCategories = [
     iconBg: "bg-design-light",
     iconColor: "text-design",
     tagClass: "bg-design-light text-design border-design/30",
-    skills: ["Notion", "Figma"],
+    skills: ["Notion", "Figma","Talk"],
   },
 ];
